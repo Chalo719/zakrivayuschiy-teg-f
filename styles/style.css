@@ -111,8 +111,11 @@
 
   font-size: 18px;
   line-height: 1.21em;
-  text-shadow: -2px 2px 0 var(--text-shadow-color, #aaa);
-  font-variation-settings: 'wght' var(--accent-font-wght, 700);
+
+  /* Убран лишний стиль тени текста */
+
+  /* Исправлено имя переменной */
+  font-variation-settings: 'wght' var(--title-font-wght, 700);
 }
 
 .card__image-wrapper {
@@ -127,31 +130,33 @@
   aspect-ratio: 1 / 1;
 }
 
-.first-sprint-start-image {
+
+/* Изменены названия классов по названию фильтров */
+.grayscale65 {
   filter: grayscale(65%);
 }
 
-.first-sprint-end-image {
+.saturate400 {
   filter: saturate(400%);
 }
 
-.second-sprint-start-image {
+.hue-rotate30 {
   filter: hue-rotate(30deg);
 }
 
-.second-sprint-end-image {
+.invert100_contrast70 {
   filter: invert(100%) contrast(70%);
 }
 
-.third-sprint-start-image {
+.sepia90 {
   filter: sepia(90%);
 }
 
-.third-sprint-end-image {
+.blur05 {
   filter: blur(0.5em);
 }
 
-.this-sprint-image {
+.hue-rotate100_contrast60_blur0125 {
   filter: hue-rotate(100deg) contrast(60%) blur(0.125em);
 }
 
@@ -186,7 +191,8 @@
   margin-block-end: var(--main-gap, 25px);
   font-size: 18px;
   line-height: 1.1667em;
-  text-shadow: -1px 1px 0 var(--text-shadow-color, #aaa);
+
+  /* Убран лишний стиль тени текста */
 }
 
 .card__buttons {
@@ -199,8 +205,8 @@
 .card__icon-button {
   display: flex;
   align-items: center;
-  padding: 1px 0;
   border: 2px solid transparent;
+  padding: 1px 0;
   transition: border 0.3s ease;
 }
 
@@ -209,8 +215,8 @@
 }
 
 .card__icon-button:focus-visible {
-  outline: 0;
   border: 2px solid var(--border-color, #000);
+  outline: 0;
 }
 
 .card__like-button {
@@ -240,9 +246,9 @@
 }
 
 .save-button__floppy-icon {
-  display: block;
   position: relative;
   z-index: 1;
+  display: block;
   color: var(--button-text-color, #fff);
   mix-blend-mode: difference;
   inline-size: 21px;
@@ -251,7 +257,9 @@
 .save-dialog[open] {
   display: grid;
   grid-template-columns: 39px minmax(198px, 234px);
-  grid-template-rows: 63px 38px;
+
+  /* Убрано правило для жёсткого задания высоты строк */
+
   align-items: center;
   row-gap: 30px;
   column-gap: 20px;
@@ -274,10 +282,17 @@
   text-transform: uppercase;
 }
 
-.save-dialog__button {
+
+/* Изменены стили под новый способ организации закрытия модального окна */
+.save-dialog__close-form {
   grid-column: 1 / 3;
+  block-size: 2.375rem;
+}
+
+.close-form__button {
   text-transform: uppercase;
-  min-block-size: 100%;
+  block-size: 100%;
+  inline-size: 100%;
 }
 
 @media (width < 376px) {

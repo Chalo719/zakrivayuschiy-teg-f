@@ -14,7 +14,9 @@
   --content-section-inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
   --border-color: #000;
   --text-stroke-color: #fff;
-  --text-shadow-color: #aaa;
+
+  /* Убрана лишняя переменная для цвета тени */
+
   --main-gap: 25px;
   --button-text-color: #fff;
 
