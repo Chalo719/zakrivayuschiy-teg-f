@@ -132,31 +132,32 @@
 
 
 /* Изменены названия классов по названию фильтров */
-.grayscale65 {
+/* Убраны численные обозначения */
+.grayscale {
   filter: grayscale(65%);
 }
 
-.saturate400 {
+.saturate {
   filter: saturate(400%);
 }
 
-.hue-rotate30 {
+.hue-rotate {
   filter: hue-rotate(30deg);
 }
 
-.invert100_contrast70 {
+.invert_contrast {
   filter: invert(100%) contrast(70%);
 }
 
-.sepia90 {
+.sepia {
   filter: sepia(90%);
 }
 
-.blur05 {
+.blur {
   filter: blur(0.5em);
 }
 
-.hue-rotate100_contrast60_blur0125 {
+.hue-rotate_contrast_blur {
   filter: hue-rotate(100deg) contrast(60%) blur(0.125em);
 }
 
@@ -265,6 +266,9 @@
   column-gap: 20px;
   padding: 30px;
   inline-size: 357px;
+
+  /* Добавлено верхнее ограничение по высоте, т.к. при открытии с телефона (IPhone 11, Safari) модальное окно сильно растягивалось (в инструментах разработчика такой проблемы не возникало) */
+  max-block-size: 197px;
 }
 
 .page:has(.save-dialog[open]) {
