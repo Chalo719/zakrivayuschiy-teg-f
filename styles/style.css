@@ -259,16 +259,14 @@
   display: grid;
   grid-template-columns: 39px minmax(198px, 234px);
 
-  /* Убрано правило для жёсткого задания высоты строк */
+  /* Жёсткое задание высоты строк исправлено на адаптивное */
+  grid-template-rows: min-content var(--close-form-block-size, 2.375rem);
 
   align-items: center;
   row-gap: 30px;
   column-gap: 20px;
   padding: 30px;
   inline-size: 357px;
-
-  /* Добавлено верхнее ограничение по высоте, т.к. при открытии с телефона (IPhone 11, Safari) модальное окно сильно растягивалось (в инструментах разработчика такой проблемы не возникало) */
-  max-block-size: 197px;
 }
 
 .page:has(.save-dialog[open]) {
@@ -290,7 +288,7 @@
 /* Изменены стили под новый способ организации закрытия модального окна */
 .save-dialog__close-form {
   grid-column: 1 / 3;
-  block-size: 2.375rem;
+  block-size: var(--close-form-block-size, 2.375rem);
 }
 
 .close-form__button {
